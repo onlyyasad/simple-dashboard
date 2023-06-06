@@ -71,19 +71,40 @@ const SalesData = () => {
             const sortedData = salesData.sort((a, b) => {
                 return a.totalProfit - b.totalProfit
             })
-            console.log(sortedData)
+            // console.log(sortedData)
             setSort(sortedData)
         }
-        if(sortValue === "most"){
+        if (sortValue === "most") {
             const sortedData = salesData.sort((a, b) => {
                 return b.totalProfit - a.totalProfit
             })
-            console.log(sortedData)
+            // console.log(sortedData)
             setSort(sortedData)
         }
-        
 
     }
+
+    const handleDateSort = event => {
+        event.preventDefault()
+        const sortValue = event.target.value;
+        console.log(sortValue)
+
+        if (sortValue === "latest") {
+            const sortedData = salesData.sort((a, b) => {
+                return new Date(b.date) - new Date(a.date)
+            })
+            setSort(sortedData)
+        }
+        if (sortValue === "oldest") {
+            const sortedData = salesData.sort((a, b) => {
+                return new Date(a.date) - new Date(b.date)
+            })
+            setSort(sortedData)
+        }
+        console.log(sort)
+    }
+
+    
 
     return (
         <div>
@@ -105,7 +126,7 @@ const SalesData = () => {
                             </th>
                             <th>
                                 Updated
-                                <select className="ml-1">
+                                <select onChange={handleDateSort} className="ml-1">
                                     <option className='p-1' disabled selected>Sort</option>
                                     <option value="latest" className='p-1'>Latest</option>
                                     <option value="oldest" className='p-1'>Oldest</option>

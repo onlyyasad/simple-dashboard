@@ -37,7 +37,7 @@ const Home = () => {
                     <div className="">
                         <p>Draft listings</p>
                         <h2 className="text-4xl font-semibold"><CountUp end={564} /></h2>
-                        <p className="text-xs">765 this week</p>
+                        <p className="text-xs">85 this week</p>
                     </div>
                 </div>
                 <div className="flex gap-2 p-4 bg-[#FFF0EC] rounded-xl">
@@ -45,7 +45,7 @@ const Home = () => {
                     <div className="">
                         <p>Expired listings</p>
                         <h2 className="text-4xl font-semibold"><CountUp end={492} /></h2>
-                        <p className="text-xs">765 this week</p>
+                        <p className="text-xs">79 this week</p>
                     </div>
                 </div>
                 <div className="flex gap-2 p-4 bg-[#FEF3FF] rounded-xl">
@@ -53,7 +53,7 @@ const Home = () => {
                     <div className="">
                         <p>Sold Out</p>
                         <h2 className="text-4xl font-semibold"><CountUp end={653} /></h2>
-                        <p className="text-xs">765 this week</p>
+                        <p className="text-xs">25 this week</p>
                     </div>
                 </div>
             </div>
