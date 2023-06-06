@@ -119,7 +119,7 @@ const SalesData = () => {
                             <th>
                                 Profit
                                 <select onChange={handleProfitSort} className="ml-1">
-                                    <option className='p-1' disabled selected>Sort</option>
+                                    <option className='p-1'>Sort</option>
                                     <option value="least" className='p-1'>Least</option>
                                     <option value="most" className='p-1'>Most</option>
                                 </select>
@@ -127,7 +127,7 @@ const SalesData = () => {
                             <th>
                                 Updated
                                 <select onChange={handleDateSort} className="ml-1">
-                                    <option className='p-1' disabled selected>Sort</option>
+                                    <option className='p-1'>Sort</option>
                                     <option value="latest" className='p-1'>Latest</option>
                                     <option value="oldest" className='p-1'>Oldest</option>
                                 </select>
