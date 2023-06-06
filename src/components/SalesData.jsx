@@ -1,6 +1,8 @@
-
+import { useState } from 'react';
+import { BsArrowRightSquare } from 'react-icons/bs';
 
 const SalesData = () => {
+
     const salesData = [
         {
             id: "a",
@@ -60,32 +62,69 @@ const SalesData = () => {
         }
     ];
 
+    const [sort, setSort] = useState(salesData);
+
+    const handleProfitSort = event => {
+        event.preventDefault();
+        const sortValue = event.target.value;
+        if (sortValue === "least") {
+            const sortedData = salesData.sort((a, b) => {
+                return a.totalProfit - b.totalProfit
+            })
+            console.log(sortedData)
+            setSort(sortedData)
+        }
+        if(sortValue === "most"){
+            const sortedData = salesData.sort((a, b) => {
+                return b.totalProfit - a.totalProfit
+            })
+            console.log(sortedData)
+            setSort(sortedData)
+        }
+        
+
+    }
+
     return (
         <div>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto rounded-lg">
                 <table className="table table-md">
-                    <thead>
+                    <thead className="bg-[#F3FBFF]">
                         <tr>
                             <th></th>
                             <th>Category</th>
                             <th>Sale Count</th>
                             <th>Sale Amount</th>
-                            <th>Profit</th>
-                            <th>Last Update</th>
-                            <th>Action</th>
+                            <th>
+                                Profit
+                                <select onChange={handleProfitSort} className="ml-1">
+                                    <option className='p-1' disabled selected>Sort</option>
+                                    <option value="least" className='p-1'>Least</option>
+                                    <option value="most" className='p-1'>Most</option>
+                                </select>
+                            </th>
+                            <th>
+                                Updated
+                                <select className="ml-1">
+                                    <option className='p-1' disabled selected>Sort</option>
+                                    <option value="latest" className='p-1'>Latest</option>
+                                    <option value="oldest" className='p-1'>Oldest</option>
+                                </select>
+                            </th>
+                            <th>Details</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                            salesData.map((data, idx) => <tr key={data.id}>
-                                <th>{idx+1}</th>
+                            sort.map((data, idx) => <tr key={data.id}>
+                                <th>{idx + 1}</th>
                                 <td>{data.category}</td>
                                 <td>{data.totalSale}</td>
                                 <td>${data.totalSalePrice}</td>
                                 <td>${data.totalProfit}</td>
                                 <td>{data.date}</td>
-                                <td><button className="btn btn-sm normal-case">Details</button></td>
+                                <td><button className="btn btn-sm normal-case"><BsArrowRightSquare /></button></td>
                             </tr>)
                         }
                     </tbody>
