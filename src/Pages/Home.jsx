@@ -14,6 +14,64 @@ const Home = () => {
         { name: 'Fri', revenue: 40000 },
         { name: 'Sat', revenue: 80000 },
     ];
+    const salesData = [
+        {
+            id: "a",
+            category: "Electronics",
+            date: "2023-01-15",
+            totalSale: 50,
+            totalSalePrice: 2500,
+            totalProfit: 1500
+        },
+        {
+            id: "b",
+            category: "Clothing",
+            date: "2023-02-10",
+            totalSale: 30,
+            totalSalePrice: 1200,
+            totalProfit: 800
+        },
+        {
+            id: "c",
+            category: "Home Decor",
+            date: "2023-03-22",
+            totalSale: 25,
+            totalSalePrice: 750,
+            totalProfit: 500
+        },
+        {
+            id: "d",
+            category: "Books",
+            date: "2023-04-05",
+            totalSale: 40,
+            totalSalePrice: 800,
+            totalProfit: 400
+        },
+        {
+            id: "e",
+            category: "Sports",
+            date: "2023-05-08",
+            totalSale: 60,
+            totalSalePrice: 3000,
+            totalProfit: 1800
+        },
+        {
+            id: "f",
+            category: "Beauty",
+            date: "2023-05-22",
+            totalSale: 20,
+            totalSalePrice: 600,
+            totalProfit: 400
+        },
+        {
+            id: "g",
+            category: "Toys",
+            date: "2023-06-01",
+            totalSale: 35,
+            totalSalePrice: 1050,
+            totalProfit: 650
+        }
+    ];
     return (
         <div className="w-full space-y-4 p-4">
             <div className="flex items-center justify-start text-xl gap-2 font-semibold">
@@ -31,7 +89,7 @@ const Home = () => {
                         <h2>Revenue Stats</h2>
                     </div>
                     <div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-col md:flex-row md:items-center gap-2">
                             <p className="text-3xl font-bold">$<CountUp end={278764} />k total revenue</p>
                             <p className="text-sm">(this week)</p>
                         </div>
@@ -40,7 +98,9 @@ const Home = () => {
                             <p className="text-sm">vs previous week</p>
                         </div>
                     </div>
-
+                    {/* *****************************************************************************
+                                            This is Graph/Chart Section  
+                    ********************************************************************************/}
                     <div style={{ width: '100%', height: 300 }}>
                         <ResponsiveContainer>
                             <AreaChart
@@ -69,6 +129,9 @@ const Home = () => {
                         </ResponsiveContainer>
                     </div>
                 </div>
+                {/* *****************************************************************************
+                                            This is Extra Section  
+                    ********************************************************************************/}
                 <div className="md:col-span-4 space-y-6">
                     <div className="flex items-center justify-start gap-2">
                         <div className="h-6 w-2 bg-[#C6EFFE]"></div>
@@ -120,7 +183,10 @@ const Home = () => {
                     <div className="h-6 w-2 bg-[#FFCFC2]"></div>
                     <h2>Listings</h2>
                 </div>
-                <SalesData></SalesData>
+                {/* *****************************************************************************
+                                            This is Table Section  
+                    ********************************************************************************/}
+                <SalesData salesData={salesData}></SalesData>
             </div>
         </div>
     );
