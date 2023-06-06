@@ -2,6 +2,7 @@
 import CountUp from 'react-countup';
 import { BiUpArrowAlt } from "react-icons/bi";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import SalesData from '../components/SalesData';
 
 const Home = () => {
     const data = [
@@ -146,6 +147,14 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+
+            </div>
+            <div className='space-y-6'>
+                <div className="flex items-center justify-start text-xl gap-2 font-semibold">
+                    <div className="h-6 w-2 bg-[#FFCFC2]"></div>
+                    <h2>Listings</h2>
+                </div>
+                <SalesData></SalesData>
             </div>
         </div>
     );

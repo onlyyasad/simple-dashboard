@@ -28,7 +28,7 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu flex-nowrap my-6 px-4 w-52 h-full space-y-2 text-base-content">
                         {/* Sidebar content here */}
-                        <h2 className="text-xl font-bold mb-4">Clean<span className="text-blue-700">Simple</span></h2>
+                        <h2 className="text-xl font-bold mb-4">Clean<span className="text-blue-700">Board</span></h2>
                         <p className="px-3 py-2 text-xs">Admin Panel</p>
                         <li>
                             <NavLink
